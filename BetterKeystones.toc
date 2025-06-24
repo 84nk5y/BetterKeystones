@@ -1,5 +1,6 @@
-## Interface: 110100
+## Interface: 110700
 ## Title: BetterKeystones
+## Category-enUS: Better UI
 ## IconTexture: 618858
 ## Notes: Improvements to the Myhtic+ Keystones
 ## Author: Banksy
@@ -7,5 +8,5 @@
 
 KeyAutoSlot.lua
 KeyOnChat.lua
-#OverrideTimer.lua
+OverrideTimer.lua
 TooltipPercentage.lua
