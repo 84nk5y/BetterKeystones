@@ -1,4 +1,4 @@
-## Interface: 110700
+## Interface: 110200
 ## Title: BetterKeystones
 ## Category-enUS: Better UI
 ## IconTexture: 618858
