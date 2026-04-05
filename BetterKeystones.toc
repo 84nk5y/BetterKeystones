@@ -4,9 +4,10 @@
 ## IconTexture: 618858
 ## Notes: Improvements to the Myhtic+ Keystones
 ## Author: Banksy
+## RequiredDeps: Blizzard_ChallengesUI
 ## OptionalDeps: MythicDungeonTools
 
 KeyAutoSlot.lua
 KeyOnChat.lua
 OverrideTimer.lua
-TooltipPercentage.lua
+#TooltipPercentage.lua
