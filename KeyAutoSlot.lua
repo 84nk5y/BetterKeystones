@@ -6,6 +6,7 @@ local function SlotKeystone()
                 C_Container.PickupContainerItem(bag, slot)
                 if CursorHasItem() then
                     C_ChallengeMode.SlotKeystone()
+                    CloseAllBags()
                     return
                 end
             end
@@ -13,21 +14,11 @@ local function SlotKeystone()
     end
 end
 
-local function TryHookKeystoneFrame()
-    if C_AddOns.IsAddOnLoaded("Blizzard_ChallengesUI") and ChallengesKeystoneFrame and ChallengesKeystoneFrame.OnShow then
-        ChallengesKeystoneFrame:HookScript("OnShow", SlotKeystone)
-        return true
-    end
-
-    return false
-end
-
 local f = CreateFrame("Frame")
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_ENTERING_WORLD" then
-        if TryHookKeystoneFrame() then
-            self:UnregisterEvent("PLAYER_ENTERING_WORLD")
-        end
+f:RegisterEvent("ADDON_LOADED")
+f:SetScript("OnEvent", function(self, event, addonName)
+    if event == "ADDON_LOADED" and addonName == "Blizzard_ChallengesUI" then
+        ChallengesKeystoneFrame:HookScript("OnShow", SlotKeystone)
+        f:UnregisterEvent("ADDON_LOADED")
     end
 end)
